@@ -15,18 +15,20 @@
         <div id="header">
             <div id="headertop">
                 <div id="searchbox">
-                    <img src="images/search.svg" alt="loupe">
-                    <input type ="text" id=searchbar>
+                    <input type ="text" id=searchbar placeholder="Find for your waifu">
+                    <img src="images/search.svg" alt="magnifying glass">
                 </div>
-                <div>Hi, roboseb</div>
+                
             </div>
             <div id="headerbottom">
                 <img src="images/darkmode.svg">
                 <img src="images/stats.svg">
+                <div>Hi, roboseb</div>
+                <img id="icon" src="images/icon.png">
             </div>
         </div>
         <div id="sidebar">
-            <p><img src="images/menu.svg">Dashboard</p>
+            <p><img src="images/menu.svg">Waifunet</p>
             <div id="options">
                 <ul>
                     <li><img src="images/home.svg">Home</li>
@@ -46,9 +48,11 @@
         
         <div id="feedbox">
             <h2>roboseb's Feed</h2>
+            <div id="feedshadow" class="hideshadow"></div>
+            <div id="feedshadow2" class="showshadow"></div>
             <div id=feed>
-                <div>
-                    <h3>Hi! This is a test panel.</h3>
+                <div class="feedpanel">
+                    <h3>1 Hi! This is a test panel.</h3>
                     <p>Just wanted to say, really great work on the 
                         project so far, you've been doing some really
                         great stuff. Stop worrying so much about 
@@ -57,8 +61,8 @@
                         over and over again.
                     </p>
                 </div>
-                <div>
-                    <h3>Hi! This is a test panel.</h3>
+                <div class="feedpanel">
+                    <h3>2 Hi! This is a test panel.</h3>
                     <p>Just wanted to say, really great work on the 
                         project so far, you've been doing some really
                         great stuff. Stop worrying so much about 
@@ -67,8 +71,8 @@
                         over and over again.
                     </p>
                 </div>
-                <div>
-                    <h3>Hi! This is a test panel.</h3>
+                <div class="feedpanel">
+                    <h3>3 Hi! This is a test panel.</h3>
                     <p>Just wanted to say, really great work on the 
                         project so far, you've been doing some really
                         great stuff. Stop worrying so much about 
@@ -77,8 +81,8 @@
                         over and over again.
                     </p>
                 </div>
-                <div>
-                    <h3>Hi! This is a test panel.</h3>
+                <div class="feedpanel">
+                    <h3>4 Hi! This is a test panel.</h3>
                     <p>Just wanted to say, really great work on the 
                         project so far, you've been doing some really
                         great stuff. Stop worrying so much about 
@@ -87,8 +91,8 @@
                         over and over again.
                     </p>
                 </div>
-                <div>
-                    <h3>Hi! This is a test panel.</h3>
+                <div class="feedpanel">
+                    <h3>5 Hi! This is a test panel.</h3>
                     <p>Just wanted to say, really great work on the 
                         project so far, you've been doing some really
                         great stuff. Stop worrying so much about 
@@ -97,8 +101,28 @@
                         over and over again.
                     </p>
                 </div>
-                <div>
-                    <h3>Hi! This is a test panel.</h3>
+                <div class="feedpanel">
+                    <h3>6 Hi! This is a test panel.</h3>
+                    <p>Just wanted to say, really great work on the 
+                        project so far, you've been doing some really
+                        great stuff. Stop worrying so much about 
+                        including overly complex features that
+                        are basically impossible. You will die doing this
+                        over and over again.
+                    </p>
+                </div>
+                <div class="feedpanel">
+                    <h3>7 Hi! This is a test panel.</h3>
+                    <p>Just wanted to say, really great work on the 
+                        project so far, you've been doing some really
+                        great stuff. Stop worrying so much about 
+                        including overly complex features that
+                        are basically impossible. You will die doing this
+                        over and over again.
+                    </p>
+                </div>
+                <div class="feedpanel">
+                    <h3>8 Hi! This is a test panel.</h3>
                     <p>Just wanted to say, really great work on the 
                         project so far, you've been doing some really
                         great stuff. Stop worrying so much about 
@@ -113,13 +137,40 @@
         </div>
         <div class=sidebox>
             <h2>Top Waifus</h2>
-            <div class="sidepanel"></div>
+            
+            <div id="sidescroll">
+                <div class="sidepanel">
+                    <h3>Makima</h3>
+                    <p>Chainsaw<br> Man</p>
+                    <img src="images/bwmakima.png">
+                </div>
+                <div class="sidepanel">
+                    <h3>Zero-Two</h3>
+                    <p>Darling <br>in the Franxx</p>
+                    <img src="images/bewzerotwo.png">
+                </div>
+                <div class="sidepanel">
+                    <h3>Lana</h3>
+                    <p>Pokemon<br> Sun & Moon</p>
+                    <img src="images/bewlana.png">
+                </div>
+                <div class="sidepanel">
+                    <h3>Milf</h3>
+                    <p>Your Local<br> HOA</p>
+                    <img src="images/bwmilf.png">
+                </div>
+
+            </div>
+            <div id="topshadow" class="hideshadow"></div>
+            <div id="topshadow2" class="showshadow"></div>
+
         </div>
-        <div class="sidebox">
+        <div class="sidebox" id="recent">
             <h2>Recent Activity</h2>
-            <div class="sidepanel"></div>
+            <div class="sidepanel">sdasdsadasdd</div>
         </div>
     </div>
+    <script src="script.js"></script>
     
 </body>
 </html>
