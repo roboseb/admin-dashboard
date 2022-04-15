@@ -11,7 +11,19 @@ body {
     --primary: #dffdff;
     --accent: #1b998b;
     --rowcount: 2;
+    --panel-shadow: inset 0px 8px 10px -6px grey;
+    --panel-shadow2: inset 0px -8px 10px -6px grey;
+    --searchbar-shadow: inset 5px 5px 10px rgb(172, 172, 172);
+    --def-box-shadow: 0px 3px 5px grey;
+    --def-drop-shadow: drop-shadow(0px -3px 3px grey);
+    --button-color: none;
 }
+
+h2{
+    font-size: 1.5rem;
+    margin: 20px 0 20px 0px;
+}
+
 
 #container {
     box-sizing: border-box;
@@ -73,7 +85,7 @@ body {
     border-radius: 10px;
     border-style: none;
     outline: none;
-    box-shadow: inset 5px 5px 10px rgb(172, 172, 172);
+    box-shadow: var(--searchbar-shadow);
 }
 
 #searchbox>img {
@@ -121,15 +133,11 @@ li>img, #sidebar>p>img{
     position: relative;
 }
 
-h2{
-    font-size: 1.5rem;
-    margin: 20px 0 20px 0px;
-}
 
 #feed {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-template-rows: repeat(var(--rowcount), calc(50% - 10px));
+    grid-template-rows: repeat(var(--rowcount), max( 250px, calc(50% - 10px)));
     gap: 20px;
     overflow-y: scroll;
     align-content: start;
@@ -137,63 +145,7 @@ h2{
     padding-bottom: 5px;
 }
 
-#feedshadow {
-    top: 68px;
-    position: absolute;
-    border-radius: 10px 10px 0 0;
-    width: 100%;
-    height: 20px;
-    box-shadow: inset 0px 8px 10px -6px grey;
-    background-color: rgba(0,0,0,0);
-}
 
-#feedshadow2 {
-    top: calc(100% - 20px);
-    position: absolute;
-    background-color: rgba(0,0,0,0);
-    border-radius: 0 0 10px 10px;
-    width: 100%;
-    height: 20px;
-    box-shadow: inset 0px -8px 10px -6px grey;
-}
-
-#topshadow {
-    top: 68px;
-    position: absolute;
-    border-radius: 10px 10px 0 0;
-    width: 100%;
-    height: 20px;
-    box-shadow: inset 0px 8px 10px -6px grey;
-    background-color: rgba(0,0,0,0);
-}
-
-#topshadow2 {
-    top: calc(100% - 20px);
-    position: absolute;
-    background-color: rgba(0,0,0,0);
-    border-radius: 0 0 10px 10px;
-    width: 100%;
-    height: 20px;
-    box-shadow: inset 0px -8px 10px -6px grey;
-}
-
-.hideshadow {
-    animation-name: hideshadow;
-    animation-duration: 0.5s;
-    filter: opacity(0);
-}
-
-.showshadow{
-    animation-name: hideshadow;
-    animation-direction: reverse;
-    animation-duration: 0.5s;
-    filter: opacity(1);
-}
-
-@keyframes hideshadow {
-    from {filter: opacity(1);}
-    to {filter: opacity(0)}
-}
 
 #feed::-webkit-scrollbar, #sidescroll::-webkit-scrollbar {
     display: none;
@@ -201,13 +153,41 @@ h2{
 
 .feedpanel {
     background-color:var(--primary);
-    overflow-y: hidden;
+    
+
     border-radius: 10px;
-    padding: 0px 10px 20px 10px;
+    padding: 0px 10px 0px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.feedpanel>div.inner {
+    overflow-y: hidden;
+    flex-grow: 1;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+
+}
+
+
+.feedpanel>.seemore {
+    box-sizing: border-box;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    border: 2px solid var(--accent);
+    border-radius: 5px;
+    align-self: end;
+    font-weight: bold;
+    padding: 2px 4px;
+}
+
+
+.feedpanel p {
+    margin: 0;
 }
 
 .feedpanel, #header, .sidepanel{
-    box-shadow: 0px 3px 5px grey;
+    box-shadow: var(--def-box-shadow);
 }
 
 .sidebox{
@@ -267,8 +247,18 @@ h2{
 .sidepanel>img {
     height:100px;
     padding:0;
-    filter: drop-shadow(0px -3px 3px grey);
+    filter: var(--def-drop-shadow);
     margin-left: 0;
+}
+
+.sidebox>.sidepanel {
+    padding: 0px 10px 0px 10px;
+    overflow: hidden;
+}
+
+.sidebox>.sidepanel span {
+    color: var(--accent);
+    font-weight: bold;
 }
 
 li{
@@ -287,4 +277,71 @@ li>img{
 
 ul{
     padding:0;
+}
+
+button {
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+}
+
+button>img {
+    filter: var(--button-color);
+}
+#feedshadow {
+    top: 68px;
+    position: absolute;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 20px;
+    box-shadow: var(--panel-shadow);
+    background-color: rgba(0,0,0,0);
+}
+
+#feedshadow2 {
+    top: calc(100% - 20px);
+    position: absolute;
+    background-color: rgba(0,0,0,0);
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    height: 20px;
+    box-shadow: var(--panel-shadow2);
+}
+
+#topshadow {
+    top: 68px;
+    position: absolute;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 20px;
+    box-shadow: var(--panel-shadow);
+    background-color: rgba(0,0,0,0);
+}
+
+#topshadow2 {
+    top: calc(100% - 20px);
+    position: absolute;
+    background-color: rgba(0,0,0,0);
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    height: 20px;
+    box-shadow: var(--panel-shadow2)
+}
+
+.hideshadow {
+    animation-name: hideshadow;
+    animation-duration: 0.5s;
+    filter: opacity(0);
+}
+
+.showshadow{
+    animation-name: hideshadow;
+    animation-direction: reverse;
+    animation-duration: 0.5s;
+    filter: opacity(1);
+}
+
+@keyframes hideshadow {
+    from {filter: opacity(1);}
+    to {filter: opacity(0)}
 }
