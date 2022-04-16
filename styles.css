@@ -4,9 +4,11 @@ body {
     font-family: 'Righteous', cursive;
     font-family: 'Roboto', sans-serif;
     background-color: var(--backdrop);
+
 }
 
 :root{
+    transition: all 0.5s;
     --backdrop: #e5e1ee;
     --primary: #dffdff;
     --accent: #1b998b;
@@ -17,6 +19,7 @@ body {
     --def-box-shadow: 0px 3px 5px grey;
     --def-drop-shadow: drop-shadow(0px -3px 3px grey);
     --button-color: none;
+    --greentext: rgb(45, 90, 0);
 }
 
 h2{
@@ -31,6 +34,7 @@ h2{
     grid-template-columns: auto 3fr 1fr;
     grid-template-rows: 1fr 3fr 3fr;
     height: 100vh;
+    position:relative;
     
 }
 
@@ -67,7 +71,30 @@ h2{
     filter:contrast(1.5);
     border-style: solid;
     border-color: var(--accent);
+    transition: all 0.5s;
+}
 
+#headerbottom>#icon:hover{
+    box-shadow: var(--def-box-shadow)
+}
+
+#headerbottom>button{
+    position:relative;
+    margin-left: 20px;
+}
+
+#headerbottom>button>img{
+    top: -15px;
+    left: 0px;
+    position: absolute;
+    transition: all 0.5s;
+    height: 30px
+}
+
+#headerbottom>button>img:hover{
+    height: 40px;
+    top: -20px;
+    left: -5px;
 }
 
 #searchbox{
@@ -75,6 +102,7 @@ h2{
     height: 20px;
     gap: 10px;
     align-items: center;
+    
 }
 
 #searchbar{
@@ -86,6 +114,27 @@ h2{
     border-style: none;
     outline: none;
     box-shadow: var(--searchbar-shadow);
+    transition: all 0.5s;
+}
+
+#searchbox img{
+    transition: all 0.5s;
+}
+
+#searchbox:hover #searchbar,
+#searchbox input:focus{
+    background-color: var(--accent);
+    box-shadow: inset 5px 5px 10px #2d6d65;
+    color:white;
+    
+}
+
+#searchbox:hover input::placeholder {
+    color: white;
+}
+
+#searchbox:hover img {
+    transform: rotate(-360deg);
 }
 
 #searchbox>img {
@@ -103,15 +152,54 @@ h2{
     box-sizing: border-box;
     padding-left: 10%;
     color: white;
-    
+    transition: all 0.5s;
 }
 
-li>img, #sidebar>p>img{
+#sidebar p{
+    margin: 0px;
+}
+
+#sidebar a:hover #mainlink {
+    gap: 20px;
+} 
+
+#sidebar a:hover #mainlink img {
+    transform: rotate(180deg);
+} 
+
+#sidebar #mainlink {
+    transition: all 0.5s;
+    margin-bottom: 20px;
+} 
+
+#sidebar a {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.5s;
+    color: white;
+}
+
+#sidebar a:hover {
+    gap: 20px;
+}
+
+#sidebar li:nth-child(even)>a {
+    color: rgb(212, 212, 212);
+}
+
+li>img, #sidebar img{
     filter: invert(100%) sepia(0%) saturate(172%) hue-rotate(281deg) brightness(113%) contrast(100%);
+    transition: all 0.5s;
+}
+
+#sidebar>#options a:hover img{ 
+    transform: rotate(27deg);
 }
 
 
-#sidebar>p{
+#sidebar #mainlink{
     display: flex;
     gap: 10px;
     margin-top: 20px;
@@ -153,12 +241,11 @@ li>img, #sidebar>p>img{
 
 .feedpanel {
     background-color:var(--primary);
-    
-
     border-radius: 10px;
     padding: 0px 10px 0px 10px;
     display: flex;
     flex-direction: column;
+    transition: all 0.5s;
 }
 
 .feedpanel>div.inner {
@@ -214,6 +301,7 @@ li>img, #sidebar>p>img{
 #sidescroll>.sidepanel {
     border-top: 4px solid var(--accent);
     position: relative;
+    
 }
 
 #sidescroll>.sidepanel>h3{
@@ -241,6 +329,7 @@ li>img, #sidebar>p>img{
     border-radius: 10px;
     padding-bottom: -50px;
     height: 80px;
+    transition: all 0.5s;
     
 }
 
@@ -256,7 +345,7 @@ li>img, #sidebar>p>img{
     overflow: hidden;
 }
 
-.sidebox>.sidepanel span {
+.username {
     color: var(--accent);
     font-weight: bold;
 }
@@ -345,3 +434,59 @@ button>img {
     from {filter: opacity(1);}
     to {filter: opacity(0)}
 }
+
+.greentext{
+    color: var(--greentext);
+}
+
+#kurippibox {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 17vw;
+    min-width: 175px;
+    max-width: 250px;
+    
+
+}
+
+#kurippibox>img{
+    position:absolute;
+    width: 100%;
+    bottom: 0px;
+    height: auto;
+}
+
+#kurippibox #kurippibase{
+    filter: drop-shadow(0px 5px 2px black);
+}
+
+#kurippibox #mouthopen {
+
+}
+
+.clicked{   
+    animation-name: closemouth;
+    animation-duration: 0.5s;
+    animation-iteration-count: 3;
+}
+
+
+@keyframes closemouth{
+    0% {height: 100%; bottom: 0%}
+    50% {height: 30%; bottom: 30%}
+    100% {height: 100%; bottom: 0%}
+}
+
+#message {
+    width: 93%;
+    bottom: 106%;
+    padding: 5px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: var(--backdrop);
+    box-shadow: 0px 5px 5px black;
+}
+
+
+
