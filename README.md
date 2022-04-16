@@ -12,6 +12,12 @@ Current Features:
 
 -See more text for overflowing text panels in feed
 
+-Dark mode button
+
+-Animated buttons and input
+
+-Kurippi virtual assistant
+
 
 
 ---Devlog---
@@ -32,16 +38,23 @@ Also I've spent the past few hours of work listening to "You" by Travis Scott an
 
 	Man, seeing how I styled all of these panels kinda separately for no reason is really biting me in the ass right now.
 
+April 15th 2022
+
+	Running the site in windows and mobile breaks shadows for some reason. Not sure why. Still looks great in XUbuntu. Added content to all the feed panels, with only one of them being stolen from MDE. Animated a bunch of buttons/links, even if they don't actually lead anywhere. They look pretty alright IMO. Seems like I can't keyframe to inverted colors. Spent the rest of the day adding in Kurippi, which I actually though would be simple for some reason. Lots of nonsense absolute positioning and for some reason JS.
+
+	Kurippi rolls different text prompts now, and I think with that I'm done here. As with the last projects, 
+I'm pleased with the result of my work visually, but I feel the code itself is not only sloppy but also inefficient in places. I do feel that it's slowly getting better though. You may notice some items on the list below have not been completed. Might come back to those, might not. Been like a 23 hour project all together now. Seeing the number gives me the sense that eventually these basic things could be implemented faster. Time will tell.
 
 ---TO-DO---
 
 DONE-Text is cut off in overflowing panel. Fix this.
 DONE-Panels are always half of the feed height. Causes problems at very small window sizing.
 -Looks stupid with too few panels?
--Add kurippi
+DONE-Add kurippi
 -Add old kurippi easter egg
 DONE-Come up with something interesting for the last panel
 DONE-Dark mode
--Animated buttons
+DONE-Animated buttons
 -See more button expands panel? Might be excessive for this project
--Change filler content on feed panels
+DONE-Change filler content on feed panels
+-Bottom shadows don't work with Chrome on Windows for some reason. Works on XUbuntu. One out of the two sections with scrolling shadows works on mobile. Not sure how to fix but sorta an issue.
